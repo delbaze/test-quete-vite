@@ -15,6 +15,13 @@ export default class BookService {
   async createBook({ title }: InputCreateBook) {
     const newBook = this.db.create({ title });
     return await this.db.save(newBook);
-}
+  }
 
+  async findBook(id: string) {
+    const book = await this.db.findOneBy({ id });
+    if (!book) {
+      throw new Error("Ce livre n'existe pas");
+    }
+    return book;
+  }
 }

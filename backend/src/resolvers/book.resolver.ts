@@ -1,15 +1,14 @@
-import { Arg, Authorized, Ctx, Mutation, Query, Resolver } from "type-graphql";
+import { Arg, Authorized, Ctx, Int, Mutation, Query, Resolver } from "type-graphql";
 import BookService from "../services/book.service";
 import Book, { InputCreateBook } from "../entities/book.entity";
-import { MyContext } from "..";
 
 @Resolver()
 export default class BookResolver {
   @Query(() => [Book])
-  async books(@Ctx() ctx: MyContext) {
+  async books() {
     return await new BookService().listBooks();
   }
-  
+
   @Authorized()
   @Mutation(() => Book)
   async createBook(@Arg("infos") infos: InputCreateBook) {
@@ -21,5 +20,15 @@ export default class BookResolver {
     // }
     const newBook = await new BookService().createBook(infos);
     return newBook;
+  }
+
+  @Query(() => Book)
+  async findBook(@Arg("id") id: string) {
+    return await new BookService().findBook(id);
+  }
+
+  @Query(() => Int)
+  test() {
+    return 123;
   }
 }

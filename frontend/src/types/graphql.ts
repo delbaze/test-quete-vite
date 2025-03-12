@@ -68,9 +68,15 @@ export type Query = {
   __typename?: 'Query';
   books: Array<Book>;
   checkToken?: Maybe<CheckTokenInfos>;
+  findBook: Book;
   login: Message;
   logout: Message;
   users: Array<User>;
+};
+
+
+export type QueryFindBookArgs = {
+  id: Scalars['String']['input'];
 };
 
 
