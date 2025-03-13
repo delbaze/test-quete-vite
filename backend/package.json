@@ -19,7 +19,8 @@
     "reflect-metadata": "^0.1.13",
     "sqlite3": "^5.1.6",
     "type-graphql": "^2.0.0-beta.3",
-    "typeorm": "^0.3.17"
+    "typeorm": "^0.3.17",
+    "uuidv4": "^6.2.13"
   },
   "devDependencies": {
     "@graphql-tools/mock": "^9.0.20",
