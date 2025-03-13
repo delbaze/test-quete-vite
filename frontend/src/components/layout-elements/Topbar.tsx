@@ -36,6 +36,7 @@ function Topbar() {
             <Link
               to="/auth/logout"
               className="px-6 py-2 text-white transition duration-500 ease-out bg-red-700 rounded-lg hover:bg-red-800 hover:ease-in hover:underline"
+              data-testid="logout-link"
             >
               Se déconnecter
             </Link>

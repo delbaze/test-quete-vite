@@ -71,6 +71,7 @@ export type Query = {
   findBook: Book;
   login: Message;
   logout: Message;
+  test: Scalars['Int']['output'];
   users: Array<User>;
 };
 
