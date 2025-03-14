@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 function Topbar() {
   const { infos } = useAuth();
+  console.log('%c⧭', 'color: #00e600', infos);
   return (
     <nav className="fixed inset-x-0 top-0 z-10 w-full px-4 py-1 bg-white shadow-md border-slate-500 dark:bg-[#0c1015] transition duration-700 ease-out">
       <div className="flex justify-between p-4">

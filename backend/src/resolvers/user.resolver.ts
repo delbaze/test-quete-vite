@@ -33,7 +33,7 @@ export default class UserResolver {
         .sign(new TextEncoder().encode(`${process.env.SECRET_KEY}`));
 
       let cookies = new Cookies(ctx.req, ctx.res);
-      cookies.set("token", token, { httpOnly: true });
+      cookies.set("token", token, { httpOnly: process.env.NODE_ENV !== "development" });
 
       m.message = "Bienvenue!";
       m.success = true;
