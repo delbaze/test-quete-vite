@@ -23,7 +23,7 @@ export default class User {
 
   @Field()
   @Column()
-  password: string;
+  private password: string;
 
   @BeforeInsert()
   protected async hashPassword() {

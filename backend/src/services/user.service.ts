@@ -20,4 +20,5 @@ export default class UserService {
     const newUser = this.db.create({ email, password });
     return await this.db.save(newUser);
   }
+
 }
